@@ -1,4 +1,8 @@
 DS_Store
-node_modules
-dist
+node_modules/
+dist/
+temp/
 .env
+
+tmp/*
+!tmp/.gitkeep

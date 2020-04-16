@@ -15,7 +15,6 @@ export default function ensureAuthenticate(
   next: NextFunction,
 ): void {
   // Validação do token jwt
-
   const authHeader = request.headers.authorization;
 
   if (!authHeader) {
@@ -23,7 +22,6 @@ export default function ensureAuthenticate(
   }
 
   // Bearer token
-
   const [, token] = authHeader.split(' ');
 
   try {
