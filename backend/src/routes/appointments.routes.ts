@@ -5,7 +5,11 @@ import { getCustomRepository } from 'typeorm';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 import CreateAppointmentService from '../services/CreateAppointmentService';
 
+import ensureAuthenticated from '../middlewares/ensureAuthenticated';
+
 const appointmentsRouter = Router();
+
+appointmentsRouter.use(ensureAuthenticated);
 
 // Responsabilidades das Rotas: Receber a requisição, chamar outro arquivo, devolver uma resposta.
 appointmentsRouter.get('/', async (request, response) => {
